@@ -1,0 +1,35 @@
+version: "3.7"
+
+services:
+  mariadb:
+    image: mariadb
+    container_name: mariadb2
+    environment:
+      - TZ=Asia/Jakarta
+      - MYSQL_ROOT_PASSWORD=demo1234
+      - MYSQL_DATABASE=dbharga
+    ports:
+      - 3306:3306
+    networks:
+      - demo-network
+    volumes:
+      - MariaDBdata2:/var/lib/mysql
+  
+  web:
+    build: .
+    container_name: info_harga
+    ports:
+      - "3000:3000"
+    environment: 
+      - DATABASE=mariadb2
+      - PASSDB=demo1234
+    networks:
+      - demo-network
+
+volumes:
+  MariaDBdata2:
+    name: MariaDBdata2
+
+networks:
+  demo-network:
+    name: demo
