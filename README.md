@@ -4,6 +4,9 @@ demo intro to docker
 ## start
 docker-compose up
 
+## stop
+docker-compose down
+
 
 ## Command IPTEKSHARING1
 
