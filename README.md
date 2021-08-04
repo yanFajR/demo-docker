@@ -27,4 +27,4 @@ docker-compose down
 ### Connect container to network
 ```docker network connect demo info_harga```
 
-```docker networ connect demo mariadb2```
+```docker network connect demo mariadb2```
