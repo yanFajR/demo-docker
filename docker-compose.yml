@@ -14,8 +14,11 @@ services:
       - demo-network
     volumes:
       - MariaDBdata2:/var/lib/mysql
+      - type: bind
+        source: hargabarang.sql
+        target: /docker-entrypoint-initdb.d/hargabarang.sql
   
-  web:
+  simplenode:
     build: .
     container_name: info_harga
     ports:
@@ -23,6 +26,14 @@ services:
     environment: 
       - DATABASE=mariadb2
       - PASSDB=demo1234
+    networks:
+      - demo-network
+
+  adminer:
+    image: adminer
+    container_name: adminer
+    ports:
+      - 8080:8080
     networks:
       - demo-network
 
