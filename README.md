@@ -1,5 +1,11 @@
 # demo-docker
-demo intro to docker
+demo intro to docker, pada demo ini akan menginstall aplikasi nodejs dan mariadb beserta adminer untuk administrasi database
+
+## prerequisite
+1. install docker
+https://docs.docker.com/get-docker/
+3. install git
+https://git-scm.com/downloads
 
 ## start
 docker-compose up -d
