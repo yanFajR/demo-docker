@@ -15,14 +15,14 @@ services:
     volumes:
       - MariaDBdata2:/var/lib/mysql
       - type: bind
-        source: hargabarang.sql
+        source: $PWD/hargabarang.sql
         target: /docker-entrypoint-initdb.d/hargabarang.sql
   
   simplenode:
     build: .
     container_name: info_harga
     ports:
-      - "3000:3000"
+      - 3000:3000
     environment: 
       - DATABASE=mariadb2
       - PASSDB=demo1234
