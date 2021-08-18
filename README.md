@@ -37,3 +37,5 @@ docker-compose down
 
 ## Membuat container adminer untuk database
 ```docker run -p 8080:8080 -d --name adminer adminer```
+
+```docker network connect demo adminer```
